@@ -1,0 +1,104 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Sriracha&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+    
+}
+
+.card{
+    display: flex; /* row */
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    padding: 25px;
+    background-color: #f88e51ac;
+    box-shadow: 1px 9px 10px rgba(0, 0, 0, 0.491);
+    position: relative;
+}
+
+.card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 20px solid transparent;
+    border-top: 20px solid #2F2E41;
+    border-right: 20px solid #2F2E41;
+}
+
+.icon{
+    margin-bottom: 20px;
+}
+
+.icon img{
+    width: 250px;
+}
+
+.content{
+    height: 215px;
+    overflow: hidden;
+    position: relative;
+}
+
+.content::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, #fab38a94);
+}
+
+.content h3{
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    position: relative;
+}
+
+.content h3::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 40px;
+    background-color: #2F2E41;
+    bottom: 4px;
+}
+
+#read_button{
+    border: none;
+    padding: 10px;
+    border-radius: 2px;
+    margin-top: 15px;
+    background-color: #2F2E41;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+#read_button:hover{
+    background-color: transparent;
+    color: #2F2E41;
+    transition: all 0.2s ease-in-out;
+}
+
+.card.active .content{
+    height: auto;
+}
+
+.card.active .content::before{
+    visibility: hidden;
+}
